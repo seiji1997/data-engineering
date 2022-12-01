@@ -1,4 +1,6 @@
 # data-engineering
-learn data engineering such as SQL and Python for big data
+learn data engineering such as SQL on BigQuery and Python for big data.
 
-- BigQuery
+- [SQL on BigQuery](https://github.com/seiji1997/data-engineering/tree/master/SQL)
+- [Python](https://github.com/seiji1997/data-engineering/tree/master/Python)
+
