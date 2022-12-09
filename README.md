@@ -1,6 +1,6 @@
 # data-engineering
 learn data engineering such as SQL on BigQuery and Python for big data.
 
-- [SQL on BigQuery](https://github.com/seiji1997/data-engineering/tree/master/SQL)
-- [Python](https://github.com/seiji1997/data-engineering/tree/master/Python)
+### Data Infrastructure
+データ基盤を構築、管理する技術領域全般をデータエンジニアリングと呼びます。データエンジニアリングを駆使し、ビジネスに価値をもたらすのがデータエンジニアと呼ばれる比較的新しい専門職です。データ活用を進めるという観点では、データ基盤が重要であるのと同じくらい、データエンジニアの存在も重要となります。データ基盤やデータエンジニアの存在により、データサイエンティストやアナリストは、信頼性のあるデータに対して、効率的な分析を行うことができるようになります。
 
