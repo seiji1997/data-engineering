@@ -1,5 +1,47 @@
 # data-engineering
 
+確率密度関数 (PDF) と確率質量関数 (PMF) を Markdown 記法で書く場合、以下のようになります。
+
+確率密度関数 (PDF)
+
+確率密度関数は連続確率変数の確率を与えます。変数 ￼ が範囲 ￼ にある確率は、次のように積分で表されます。
+
+#### Probability Density Function (PDF)
+
+The probability that a continuous random variable \(X\) lies in the interval \([a, b]\) is given by the integral of the PDF \(f(x)\):
+
+\[
+P(a \leq X \leq b) = \int_a^b f(x) \, dx
+\]
+
+Where \(f(x)\) is the probability density function and satisfies the following condition:
+
+\[
+\int_{-\infty}^{\infty} f(x) \, dx = 1
+\]
+
+確率質量関数 (PMF)
+
+確率質量関数は離散確率変数の確率を与えます。変数 ￼ が特定の値 ￼ をとる確率は次のように表されます。
+
+#### Probability Mass Function (PMF)
+
+The probability that a discrete random variable \(X\) takes the specific value \(x\) is given by the PMF \(p(x)\):
+
+\[
+P(X = x) = p(x)
+\]
+
+The sum of the probabilities over all possible values of \(X\) must equal 1:
+
+\[
+\sum_{x} p(x) = 1
+\]
+
+これにより、PDF と PMF の違いを Markdown 形式で表現できます。
+
+
+
 
 確率密度関数（Probability Density Function, PDF）と確率質量関数（Probability Mass Function, PMF）は、どちらも確率を扱う数学的な関数ですが、離散変数と連続変数に対して異なる役割を果たします。
 
