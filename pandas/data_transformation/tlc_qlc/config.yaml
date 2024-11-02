@@ -1,0 +1,5 @@
+file_pattern: '*TLC*/**/*.csv'
+output_file: 'processed.csv'
+
+# file_pattern: '*QLC*/**/*.csv'
+# output_file: 'processed.csv'

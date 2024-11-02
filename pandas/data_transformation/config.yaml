@@ -1,0 +1,2 @@
+file_pattern: '*TLC*/**/*.csv'
+output_file: 'processed.csv'
