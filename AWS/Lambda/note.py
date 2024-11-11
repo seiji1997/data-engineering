@@ -9,6 +9,19 @@ cdn_script = """
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 """
 
+# CSSスタイルの設定
+dark_theme_css = """
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    .plot-container {
+        background-color: black;
+    }
+</style>
+"""
+
 body_contents = []
 
 for idx, file in enumerate(html_files):
@@ -24,6 +37,7 @@ with open(output_file, "w", encoding="utf-8") as outfile:
     # HTMLヘッダー部分
     outfile.write("<html>\n<head>\n<title>Combined Plots</title>\n")
     outfile.write(cdn_script)  # CDN経由のPlotlyスクリプトを1回だけ読み込む
+    outfile.write(dark_theme_css)  # 暗いテーマのCSSを追加
     outfile.write("\n</head>\n<body>\n")
     
     # 各プロットの内容を<body>内に順に追加
