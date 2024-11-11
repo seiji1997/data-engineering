@@ -1,38 +1,36 @@
-html_files = ["plot1.html", "plot2.html", ..., "plot14.html"]
+# 結合するHTMLファイルのリスト
+html_files = ["plot1.html", "plot2.html", "plot3.html"]  # 必要なファイル名に置き換え
+
+# 結合後のHTMLファイル名
 output_file = "combined_plots.html"
 
-scripts = """
+# PlotlyのCDNスクリプト
+cdn_script = """
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 """
 
 body_contents = []
 
 for idx, file in enumerate(html_files):
-    try:
-        with open(file, "r", encoding="utf-8") as infile:
-            content = infile.read()
-            print(f"Processing file: {file}")
+    with open(file, "r", encoding="utf-8") as infile:
+        content = infile.read()
+        
+        # 各HTMLファイルには<body>タグが含まれていないため、全体をそのまま取得
+        unique_body_content = content.replace("plot", f"plot_{idx}")
+        body_contents.append(f"<div>{unique_body_content}</div>")
 
-            # <body>タグ内の内容を抽出してユニークIDを付与
-            body_start = content.find("<body>") + len("<body>")
-            body_end = content.find("</body>")
-            body_content = content[body_start:body_end]
-            unique_body_content = body_content.replace("plot", f"plot_{idx}")
-            body_contents.append(f"<div>{unique_body_content}</div>")
-
-    except Exception as e:
-        print(f"Error processing file {file}: {e}")
-
-# 結合ファイルの作成
+# HTMLファイルの作成
 with open(output_file, "w", encoding="utf-8") as outfile:
+    # HTMLヘッダー部分
     outfile.write("<html>\n<head>\n<title>Combined Plots</title>\n")
-    outfile.write(scripts)
+    outfile.write(cdn_script)  # CDN経由のPlotlyスクリプトを1回だけ読み込む
     outfile.write("\n</head>\n<body>\n")
-
-    for idx, body_content in enumerate(body_contents):
+    
+    # 各プロットの内容を<body>内に順に追加
+    for body_content in body_contents:
         outfile.write(body_content + "\n")
-        print(f"Writing content for section {idx + 1}.")
-
+    
+    # HTMLの終了タグ
     outfile.write("</body>\n</html>")
 
-print(f"Combined HTML file created: {output_file} with {len(body_contents)} sections.")
+print(f"Combined HTML file created: {output_file}")
