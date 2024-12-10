@@ -7,7 +7,7 @@ learn data engineering, such as SQL on BigQuery and Python for big data using pa
 ### pandas 100
 https://qiita.com/kunishou/items/bd5fad9a334f4f5be51c
 
-
+'''text
 以下にPandasのメソッドに対応するPolarsでの記述例や概念上の相違点、注意点などをまとめます。
 
 メソッド対応一覧
@@ -68,3 +68,5 @@ PolarsにはLazyモードがあり、pl.scan_csv()でデータを遅延読み込
 	•	カラム単位の操作を基本とし、Polarsのメソッドチェーンを利用して明確で高速なデータ変換パイプラインを築く。
 
 以上の点を踏まえることで、PandasからPolarsへの移行時に生じるメソッド呼び出しや概念的な差異をスムーズに克服できます。
+
+'''
