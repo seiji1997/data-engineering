@@ -17,3 +17,9 @@ refactor(config): utilize __post_init__ for initialization
 
 - Modified Config class to use __post_init__ for initialization steps.
 - Refactored related logic for better dataclass initialization flow.
+
+
+fix(mypy): resolve mypy error by updating `re` imports and refactoring usage
+
+- Replaced `from re import compile, search` with `import re` to address mypy type-check errors.
+- Adjusted code to use `re.compile` and `re.search` directly.
