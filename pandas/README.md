@@ -23,3 +23,45 @@ fix(mypy): resolve mypy error by updating `re` imports and refactoring usage
 
 - Replaced `from re import compile, search` with `import re` to address mypy type-check errors.
 - Adjusted code to use `re.compile` and `re.search` directly.
+
+
+chore: run isort to format imports
+
+- Sort imports using isort to maintain a standardized import order
+
+
+docs(config): clarify comments for config attributes
+
+- Improve the clarity and readability of comments related to config attributes
+
+refactor(config): revise __post_init__ and member methods
+
+- Modify the implementation of __post_init__ for improved initialization logic
+- Refactor member methods for better clarity and maintainability
+- Convert methods to use @property decorators for consistency
+- Implement functools.cached_property to optimize repeated lookups
+- Adjust set naming conventions to follow the project’s style guidelines
+
+docs(state): add return value docs for state_to_page_col_list and unify typing.List usage
+
+- Document the return value of state_to_page_col_list
+- Standardize usage of typing.List for type hints
+
+refactor: add type annotations to create_col_list
+
+- Add type annotations to arguments and return value of create_col_list for clearer code contracts
+
+
+docs(main): update Main function docstring to follow Google style
+
+- Rewrite the Main function docstring according to the Google docstring style guidelines
+
+docs(preloader): rewrite Select_preloader function docstring
+
+- Improve the docstring for Select_preloader to accurately describe the function’s purpose and usage
+
+
+
+
+
+
