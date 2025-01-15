@@ -1,21 +1,20 @@
-# 結合するHTMLファイルのリスト
-html_files = ["fig_output1.html", "fig_output2.html", "fig_output3.html"]
+# config.yaml
 
-# 結合後のHTMLファイル名
-output_file = "combined_plots.html"
+input_path:
+  # excel_files
+  quotation_path: "data/quotation_test.xlsx"
 
-# 新しいHTMLファイルの作成とアペンド
-with open(output_file, "w", encoding="utf-8") as outfile:
-    # HTMLのヘッダー部分
-    outfile.write("<html>\n<head>\n<title>Combined Plots</title>\n</head>\n<body>\n")
-    
-    # 各HTMLファイルの内容を順番に追加
-    for file in html_files:
-        with open(file, "r", encoding="utf-8") as infile:
-            content = infile.read()
-            outfile.write(content + "\n")  # 内容全体をそのままアペンド
-    
-    # HTMLの終了タグ
-    outfile.write("</body>\n</html>")
+  # csv_files
+  condition_table: "data/condition_table_test.csv"
+  lut_table_path: "data/lut.csv"
 
-print(f"Combined HTML file created: {output_file}")
+  # parquet_files
+  fbc_data_path: "data/fbc_data/"
+
+  # frame_size
+  tlc: 36
+  qlc: 37
+
+output_path:
+  # output
+  output_path: "output_data"
